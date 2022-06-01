@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
-      <Header greeting={'DiSEñoS uNiCoS'}/>
+      <Header greeting={'DiSEñoS uNiCoS'} subTitle={'hechos a mano'}/>
       <ItemListContainer/>
       <Footer webSite={'Tejidoteado Porteño DECO'} year={2022}/>
     </div>
