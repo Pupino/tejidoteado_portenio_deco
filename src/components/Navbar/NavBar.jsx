@@ -1,3 +1,5 @@
+import CartWidget from '../CartWidget/CartWidget';
+
 function NavBar() {
     return (
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -18,13 +20,7 @@ function NavBar() {
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi-cart-fill me-1"></i>
-                            Carrito
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                        </button>
-                    </form>
+                    <CartWidget label='Carrito' quantity='3'/>
                 </div>
             </div>
         </nav>
