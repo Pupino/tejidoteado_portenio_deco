@@ -1,4 +1,5 @@
 import React from 'react'
+import ItemCount from '../ItemCount/ItemCount'
 
 const divBadgeStyles = {
     top: '0.5rem',
@@ -24,9 +25,7 @@ export default function ItemListContainer(props) {
                             </div>
                         </div>
                         {/* <!-- Product actions--> */}
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                        </div>
+                        <ItemCount stock={5} initial={0}/>
                     </div>
                 </div>
                 <div class="col mb-5">
@@ -54,9 +53,7 @@ export default function ItemListContainer(props) {
                             </div>
                         </div>
                         {/* <!-- Product actions--> */}
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                        </div>
+                        <ItemCount stock={5} initial={0}/>
                     </div>
                 </div>
                 <div class="col mb-5">
@@ -76,9 +73,7 @@ export default function ItemListContainer(props) {
                             </div>
                         </div>
                         {/* <!-- Product actions--> */}
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                        </div>
+                        <ItemCount stock={5} initial={0}/>
                     </div>
                 </div>
                 <div class="col mb-5">
@@ -103,9 +98,7 @@ export default function ItemListContainer(props) {
                             </div>
                         </div>
                         {/* <!-- Product actions--> */}
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                        </div>
+                        <ItemCount stock={2} initial={1}/>
                     </div>
                 </div>
                 <div class="col mb-5">
@@ -125,9 +118,7 @@ export default function ItemListContainer(props) {
                             </div>
                         </div>
                         {/* <!-- Product actions--> */}
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                        </div>
+                        <ItemCount stock={3} initial={2}/>
                     </div>
                 </div>
                 <div class="col mb-5">
@@ -144,9 +135,7 @@ export default function ItemListContainer(props) {
                             </div>
                         </div>
                         {/* <!-- Product actions--> */}
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                        </div>
+                        <ItemCount stock={5} initial={0}/>
                     </div>
                 </div>
                 <div class="col mb-5">
@@ -174,9 +163,7 @@ export default function ItemListContainer(props) {
                             </div>
                         </div>
                         {/* <!-- Product actions--> */}
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                        </div>
+                        <ItemCount stock={5} initial={0}/>
                     </div>
                 </div>
                 <div class="col mb-5">
@@ -201,9 +188,7 @@ export default function ItemListContainer(props) {
                             </div>
                         </div>
                         {/* <!-- Product actions--> */}
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                        </div>
+                        <ItemCount stock={5} initial={0}/>
                     </div>
                 </div>
             </div>
