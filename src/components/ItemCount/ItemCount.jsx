@@ -4,16 +4,12 @@ export default function ItemCount({ stock, initial }) {
 
   const [qty, setQty] = useState(initial);
 
-  function addition() {
-    if (qty < stock){
-        setQty(qty + 1);
-    }
+  const addition = () => {
+    qty < stock && setQty(qty + 1);
   }
 
-  function subtraction() {
-    if (qty > 0){
-        setQty(qty - 1);
-    }
+  const subtraction = () => {
+    qty > 0 && setQty(qty - 1);
   }
 
   return (
