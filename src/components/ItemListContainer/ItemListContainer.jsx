@@ -2,13 +2,16 @@ import React, { useState, useEffect } from 'react'
 import ItemList from '../ItemList/ItemList'
 import Header from '../Header';
 import { productsData } from '../../data/products'
+import { useParams } from 'react-router-dom';
 
 export default function ItemListContainer(props) {
 
     const [products, setProducts] = useState([]);
+    const { categoryid } = useParams();
 
     useEffect(() => {
         const getProducts = new Promise((res, rej) => {
+            console.log('llamando a la api');
             setTimeout(() => {
                 res(productsData);
             }, 2000);
@@ -21,6 +24,7 @@ export default function ItemListContainer(props) {
             .catch((error) => {
                 console.log(error);
             });
+        console.log('i fire once');
     }, []);
 
   return (

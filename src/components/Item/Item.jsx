@@ -1,6 +1,6 @@
-import React from 'react'
-import ItemCount from '../ItemCount/ItemCount'
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
+import React from 'react';
+import ItemCount from '../ItemCount/ItemCount';
+import { NavLink } from 'react-router-dom';
 
 const Item = ({ item }) => {
 
@@ -15,7 +15,7 @@ const Item = ({ item }) => {
             {/* <!-- Sale badge--> */}
             <div class="badge bg-dark text-white position-absolute" style={divBadgeStyles}>Sale</div>
             {/* <!-- Product image--> */}
-            <img class="card-img-top" src={item.img} alt="..." />
+            <NavLink to={`/item/${item.id}`}><img class="card-img-top" src={item.img} alt="..." /></NavLink>
             {/* <!-- Product details--> */}
             <div class="card-body p-4">
                 <div class="text-center">
