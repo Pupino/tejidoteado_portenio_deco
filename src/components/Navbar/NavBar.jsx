@@ -13,10 +13,10 @@ function NavBar() {
                         <li class="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" id="navbarDropdown" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">Crochet</a></li>
+                                <Link to='/category/crochet'><a class="dropdown-item" href="#!">Crochet</a></Link>
                                 <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">2 Agujas</a></li>
-                                <li><a class="dropdown-item" href="#!">Bordados</a></li>
+                                <Link to='/category/agujas'><a class="dropdown-item" href="#!">2 Agujas</a></Link>
+                                <Link to='/category/bordado'><a class="dropdown-item" href="#!">Bordados</a></Link>
                             </ul>
                         </li>
                     </ul>
