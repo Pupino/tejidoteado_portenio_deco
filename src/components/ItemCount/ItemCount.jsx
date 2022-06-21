@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function ItemCount({ stock, initial }) {
 
@@ -13,18 +14,18 @@ export default function ItemCount({ stock, initial }) {
   }
 
   return (
-    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-        <div class="text-center">
-            <button type="button" class="btn btn-default btn-number" data-type="minus" onClick={subtraction}>
-                <i class="bi bi-dash-square"></i>
+    <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
+        <div className="text-center">
+            <button type="button" className="btn btn-default btn-number" data-type="minus" onClick={subtraction}>
+                <i className="bi bi-dash-square"></i>
             </button>
             <span>{qty}</span>
-            <button type="button" class="btn btn-default btn-number" data-type="plus" onClick={addition}>
-                <i class="bi bi-plus-square"></i>
+            <button type="button" className="btn btn-default btn-number" data-type="plus" onClick={addition}>
+                <i className="bi bi-plus-square"></i>
             </button>
         </div>
-        <div class="text-center">
-            <a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
+        <div className="text-center">
+            <Link className="btn btn-outline-dark mt-auto" to="/">Add to cart</Link>
         </div>
     </div>
   )

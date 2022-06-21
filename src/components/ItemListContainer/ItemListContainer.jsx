@@ -11,7 +11,7 @@ export default function ItemListContainer(props) {
 
     useEffect(() => {
         const getProducts = new Promise((res, rej) => {
-            console.log('llamando a la api');
+            // console.log('llamando a la api');
             setTimeout(() => {
                 if (categoryid) {
                     res(productsData.filter(product => product.category === categoryid));
@@ -28,17 +28,17 @@ export default function ItemListContainer(props) {
             .catch((error) => {
                 console.log(error);
             });
-        console.log('i fire once');
+        //console.log('i fire once');
     }, [categoryid]);
 
   return (
     <>
         {!(categoryid)
-            ?<Header greeting={'DiSEñOs uNiCoS'} subTitle={'hechos a mano'}/>
+            ?<Header greeting={'DISEÑOS UNICOS'} subTitle={'hechos a mano'}/>
             :<Header greeting={categoryid} subTitle={''}/>}
-        <section class="py-5">
-            <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <section className="py-5">
+            <div className="container px-4 px-lg-5 mt-5">
+                <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     <ItemList items={products}/>
                 </div>
             </div>

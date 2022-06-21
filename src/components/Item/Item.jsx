@@ -10,17 +10,17 @@ const Item = ({ item }) => {
     }
 
   return (
-    <div class="col mb-5">
-        <div class="card h-100">
+    <div className="col mb-5">
+        <div className="card h-100">
             {/* <!-- Sale badge--> */}
-            <div class="badge bg-dark text-white position-absolute" style={divBadgeStyles}>Sale</div>
+            <div className="badge bg-dark text-white position-absolute" style={divBadgeStyles}>Sale</div>
             {/* <!-- Product image--> */}
-            <NavLink to={`/item/${item.id}`}><img class="card-img-top" src={item.img} alt="..." /></NavLink>
+            <NavLink to={`/item/${item.id}`}><img className="card-img-top" src={item.img} alt="..." /></NavLink>
             {/* <!-- Product details--> */}
-            <div class="card-body p-4">
-                <div class="text-center">
+            <div className="card-body p-4">
+                <div className="text-center">
                     {/* <!-- Product name--> */}
-                    <h5 class="fw-bolder">{item.name}</h5>
+                    <h5 className="fw-bolder">{item.name}</h5>
                     {/* <!-- Product price--> */}
                     ${item.price}
                 </div>
