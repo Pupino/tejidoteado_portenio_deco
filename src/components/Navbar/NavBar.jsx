@@ -1,5 +1,5 @@
 import CartWidget from '../CartWidget/CartWidget';
-import{ Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
     return (
@@ -20,7 +20,7 @@ function NavBar() {
                         </li>
                         <li className="nav-item"><Link to="/nosotros" className="nav-link">Nosotros</Link></li>
                     </ul>
-                    <CartWidget label='Carrito' quantity='3'/>
+                    <CartWidget label='Carrito' quantity='0'/>
                 </div>
             </div>
         </nav>

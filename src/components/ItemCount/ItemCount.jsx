@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-export default function ItemCount({ stock, initial }) {
+export default function ItemCount(props) {
+  let initial = props.initial;
+  let stock = props.stock;
 
   const [qty, setQty] = useState(initial);
 
@@ -13,8 +15,13 @@ export default function ItemCount({ stock, initial }) {
     qty > 0 && setQty(qty - 1);
   }
 
+  function add(event) {
+    //console.log('qty from itemCount: ' + qty);
+    props.onAdd(event, qty); //listener on ItemDetail
+  }
+
   return (
-    <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
+    <div id="countElement" className="card-footer p-4 pt-0 border-top-0 bg-transparent">
         <div className="text-center">
             <button type="button" className="btn btn-default btn-number" data-type="minus" onClick={subtraction}>
                 <i className="bi bi-dash-square"></i>
@@ -25,7 +32,7 @@ export default function ItemCount({ stock, initial }) {
             </button>
         </div>
         <div className="text-center">
-            <Link className="btn btn-outline-dark mt-auto" to="/">Add to cart</Link>
+            <button className="btn btn-outline-dark mt-auto" onClick={add}>Add to cart</button>
         </div>
     </div>
   )

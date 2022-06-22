@@ -16,6 +16,7 @@ function App() {
           <Route path='/item/:id' element={<ItemDetailContainer/> }/>
           <Route path='/nosotros' element={<Nosotros/> }/>
           <Route path="/category/:categoryid" element={<ItemListContainer/>} />
+          <Route path='/cart' />
         </Routes>
         <Footer webSite={'Tejidoteado Porteño DECO'} year={2022}/>
       </BrowserRouter>

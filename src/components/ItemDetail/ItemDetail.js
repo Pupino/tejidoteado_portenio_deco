@@ -1,11 +1,19 @@
-import React from 'react'
-import ItemCount from '../ItemCount/ItemCount'
+import React, { useState } from 'react';
+import ItemCount from '../ItemCount/ItemCount';
+import { Link } from 'react-router-dom';
 
 function ItemDetail({item}) {
+
+  const [itemsToBuy, setItemsToBuy] = useState(1);
 
   const divBadgeStyles = {
     top: '0.5rem',
     right: '0.5rem'
+  }
+
+  function addToCart(evt, quantity) {
+    setItemsToBuy(quantity);
+    document.getElementById("countElement").style.display = 'none';
   }
 
   for (const result in item) {
@@ -27,7 +35,10 @@ function ItemDetail({item}) {
                     </div>
                 </div>
                 {/* <!-- Product actions--> */}
-                <ItemCount stock={5} initial={1}/>
+                <ItemCount stock={5} initial={1} onAdd={addToCart}/>
+                <div id="endShop" className="text-center p-4 pt-0">
+                  <button className="btn btn-outline-info p-0"><Link to="/cart" className="btn btn-outline-info active text-light">End Shop {itemsToBuy}</Link></button>
+              </div>
             </div>
         </div>
     )
