@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemCount from '../ItemCount/ItemCount';
+// import ItemCount from '../ItemCount/ItemCount';
 import { NavLink } from 'react-router-dom';
 
 const Item = ({ item }) => {
@@ -26,7 +26,7 @@ const Item = ({ item }) => {
                 </div>
             </div>
             {/* <!-- Product actions--> */}
-            <ItemCount stock={5} initial={1}/>
+            {/* <ItemCount stock={5} initial={1}/> */}
         </div>
     </div>
   )
