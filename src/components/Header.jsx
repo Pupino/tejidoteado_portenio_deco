@@ -1,8 +1,9 @@
 import React from 'react'
 
 export default function Header(props) {
+
   return (
-    <header className="bg-dark py-5">
+    <header className={props.headerClass}>
         <div className="container">
             <div className="text-center text-white">
                 <h1 className="display-4 fw-bolder">{props.greeting}</h1>

@@ -1,6 +1,7 @@
 import React from 'react';
 // import ItemCount from '../ItemCount/ItemCount';
 import { NavLink } from 'react-router-dom';
+import Header from '../Header';
 
 const Item = ({ item }) => {
 
@@ -10,6 +11,7 @@ const Item = ({ item }) => {
     }
 
   return (
+    <>
     <div className="col mb-5">
         <div className="card h-100">
             {/* <!-- Sale badge--> */}
@@ -29,6 +31,7 @@ const Item = ({ item }) => {
             {/* <ItemCount stock={5} initial={1}/> */}
         </div>
     </div>
+    </>
   )
 }
 

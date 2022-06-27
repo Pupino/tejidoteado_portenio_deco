@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../context/CartContext';
 
 function ItemDetail({item}) {
-
+  const { addItem, isInCart, removeItem } = useContext(CartContext);
   const [itemsToBuy, setItemsToBuy] = useState(0);
 
   const divBadgeStyles = {
@@ -13,34 +14,43 @@ function ItemDetail({item}) {
 
   function addToCart(evt, quantity) {
     setItemsToBuy(quantity);
+    addItem(item, quantity);
+  }
+
+  function removeItemFromItem (){
+    removeItem(item.id);
+    setItemsToBuy(0);
   }
 
   for (const result in item) {
     return (
-        <div className="col mb-5">
-            <div className="card h-100">
-                {/* <!-- Sale badge--> */}
-                <div className="badge bg-dark text-white position-absolute" style={divBadgeStyles}>Sale</div>
-                {/* <!-- Product image--> */}
-                <img className="card-img-top" src={item.img} alt="..." />
-                {/* <!-- Product details--> */}
-                <div className="card-body p-4">
-                    <div className="text-center">
-                        {/* <!-- Product name--> */}
-                        <h5 className="fw-bolder">{item.name}</h5>
-                        <div className="p-2">{item.desc}</div>
-                        {/* <!-- Product price--> */}
-                        ${item.price}
+            <div className="col mb-5">
+                <div className="card h-100">
+                    {/* <!-- Sale badge--> */}
+                    <div className="badge bg-dark text-white position-absolute" style={divBadgeStyles}>Sale</div>
+                    {/* <!-- Product image--> */}
+                    <img className="card-img-top" src={item.img} alt="..." />
+                    {/* <!-- Product details--> */}
+                    <div className="card-body p-4 pb-2 border-bottom">
+                        <div className="text-center">
+                            {/* <!-- Product name--> */}
+                            <h5 className="fw-bolder">{item.name}</h5>
+                            <div className="p-2">{item.desc}</div>
+                            {/* <!-- Product price--> */}
+                            ${item.price}
+                        </div>
                     </div>
+                    {/* <!-- Product actions--> */}
+                    {itemsToBuy === 0 ?
+                      <ItemCount stock={5} initial={1} onAdd={addToCart}/>
+                      :
+                      <Link to="/cart" className="btn btn-outline-info active text-light m-4 mt-0">End Shop</Link>
+                    }
+                    {isInCart(item.id) &&
+                      <button className="btn btn-outline-secondary active text-light m-4 mt-0" onClick={removeItemFromItem}>Remove Item</button>
+                    }
                 </div>
-                {/* <!-- Product actions--> */}
-                {itemsToBuy === 0 ?
-                  <ItemCount stock={5} initial={1} onAdd={addToCart}/>
-                  :
-                  <Link to="/cart" className="btn btn-outline-info active text-light m-4">End Shop {itemsToBuy}</Link>
-                }
             </div>
-        </div>
     )
   }
 }
