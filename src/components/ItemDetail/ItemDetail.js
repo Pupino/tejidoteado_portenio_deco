@@ -44,10 +44,10 @@ function ItemDetail({item}) {
                     {itemsToBuy === 0 ?
                       <ItemCount stock={5} initial={1} onAdd={addToCart}/>
                       :
-                      <Link to="/cart" className="btn btn-outline-info active text-light m-4 mt-0">End Shop</Link>
+                      <Link to="/cart" className="btn btn-outline-info active text-light m-4 mt-0">Terminar mi Compra</Link>
                     }
                     {isInCart(item.id) &&
-                      <button className="btn btn-outline-secondary active text-light m-4 mt-0" onClick={removeItemFromItem}>Remove Item</button>
+                      <button className="btn btn-outline-secondary active text-light m-4 mt-0" onClick={removeItemFromItem}>Remover Item</button>
                     }
                 </div>
             </div>

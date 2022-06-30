@@ -19,7 +19,7 @@ function ItemDetailContainer() {
         });
         getItem
             .then((res) => {
-                console.log(res)
+                //console.log(res)
                 setProduct(res);
                 //console.log('product' + item);
             })
@@ -32,7 +32,7 @@ function ItemDetailContainer() {
     <>
     {(id) && <Header greeting={item.category} subTitle={''} headerClass={'bg-dark py-3'}/>}
     <section className="py-5 pt-2">
-        <div className="container px-4 px-lg-5 mt-5">
+        <div className="container px-4 px-lg-5 mt-0">
             <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-3 justify-content-center">
                 <ItemDetail key={item.id} item={item}/>
             </div>

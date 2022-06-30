@@ -3,11 +3,13 @@ import ItemList from '../ItemList/ItemList'
 import { productsData } from '../../data/products'
 import { useParams } from 'react-router-dom';
 import Header from '../Header'
+//import { getItems } from '../../services/FirebaseConfig';
 
 export default function ItemListContainer(props) {
 
     const [products, setProducts] = useState([]);
     const { categoryid } = useParams();
+    //console.log(getItems());
 
     useEffect(() => {
         const getProducts = new Promise((res, rej) => {
@@ -37,7 +39,7 @@ export default function ItemListContainer(props) {
             ?<Header greeting={'DISEÑOS UNICOS'} subTitle={'hechos a mano'} headerClass={'bg-dark py-4'}/>
             :<Header greeting={categoryid} subTitle={''} headerClass={'bg-dark py-3'}/>}
         <section className="py-5">
-            <div className="container px-4 px-lg-5 mt-5">
+            <div className="container px-4 px-lg-5 mt-0">
                 <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     <ItemList items={products}/>
                 </div>

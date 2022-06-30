@@ -6,8 +6,11 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './styles.css';
 import Nosotros from './components/Nosotros/Nosotros';
 import {CartProvider} from './context/CartContext';
+import Cart from './components/Cart/Cart';
+//import appFirestore from './services/FirebaseConfig';
 
 function App() {
+  //console.log(appFirestore);
   return (
     <div className="App">
       <CartProvider>
@@ -18,7 +21,7 @@ function App() {
             <Route path='/item/:id' element={<ItemDetailContainer/> }/>
             <Route path='/nosotros' element={<Nosotros/> }/>
             <Route path="/category/:categoryid" element={<ItemListContainer/>} />
-            <Route path='/cart' />
+            <Route path='/cart' element={<Cart/>}/>
           </Routes>
           <Footer webSite={'Tejidoteado Porteño DECO'} year={2022}/>
         </BrowserRouter>
