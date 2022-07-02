@@ -7,10 +7,10 @@ import './styles.css';
 import Nosotros from './components/Nosotros/Nosotros';
 import {CartProvider} from './context/CartContext';
 import Cart from './components/Cart/Cart';
-//import appFirestore from './services/FirebaseConfig';
+//import { testDataBase } from './services/FirebaseConfig';
 
 function App() {
-  //console.log(appFirestore);
+  //testDataBase();
   return (
     <div className="App">
       <CartProvider>

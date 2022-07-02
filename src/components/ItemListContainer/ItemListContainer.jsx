@@ -1,31 +1,38 @@
 import React, { useState, useEffect } from 'react'
 import ItemList from '../ItemList/ItemList'
-import { productsData } from '../../data/products'
+//import { productsData } from '../../data/products'
 import { useParams } from 'react-router-dom';
 import Header from '../Header'
-//import { getItems } from '../../services/FirebaseConfig';
+import { getItems } from '../../services/FirebaseConfig';
 
 export default function ItemListContainer(props) {
 
     const [products, setProducts] = useState([]);
     const { categoryid } = useParams();
-    //console.log(getItems());
+
+    //getItems().then( respuesta => console.log(respuesta));
 
     useEffect(() => {
-        const getProducts = new Promise((res, rej) => {
-            // console.log('llamando a la api');
-            setTimeout(() => {
-                if (categoryid) {
-                    res(productsData.filter(product => product.category === categoryid));
-                } else {
-                    res(productsData);
-                }
-            }, 2000);
-        });
-        getProducts
+        // const getProducts = new Promise((res, rej) => {
+        //     // console.log('llamando a la api');
+        //     setTimeout(() => {
+        //         if (categoryid) {
+        //             res(productsData.filter(product => product.category === categoryid));
+        //         } else {
+        //             res(productsData);
+        //         }
+        //     }, 2000);
+        // });
+        //getProducts
+        getItems()
             .then((res) => {
                 //console.log(res)
-                setProducts(res);
+                if (categoryid) {
+                    setProducts(res.filter(product => product.category === categoryid));
+                } else {
+                    setProducts(res);
+                }
+
             })
             .catch((error) => {
                 console.log(error);
