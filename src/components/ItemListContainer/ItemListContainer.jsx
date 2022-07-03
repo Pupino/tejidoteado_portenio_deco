@@ -3,7 +3,7 @@ import ItemList from '../ItemList/ItemList'
 //import { productsData } from '../../data/products'
 import { useParams } from 'react-router-dom';
 import Header from '../Header'
-import { getItems } from '../../services/FirebaseConfig';
+import { getItems, getProductsByCategory } from '../../services/FirebaseConfig';
 
 export default function ItemListContainer(props) {
 
@@ -28,11 +28,15 @@ export default function ItemListContainer(props) {
             .then((res) => {
                 //console.log(res)
                 if (categoryid) {
-                    setProducts(res.filter(product => product.category === categoryid));
+                    //setProducts(res.filter(product => product.category === categoryid));
+                    getProductsByCategory(categoryid)
+                        .then((rta) => {
+                            //console.log('rta: ' + rta);
+                            setProducts(rta);
+                        })
                 } else {
                     setProducts(res);
                 }
-
             })
             .catch((error) => {
                 console.log(error);
