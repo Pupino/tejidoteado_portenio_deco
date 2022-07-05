@@ -32,7 +32,7 @@ export default function ItemCount(props) {
             </button>
         </div>
         <div className="text-center">
-            <button className="btn btn-outline-dark mt-auto" onClick={add}>Add to cart</button>
+            <button className="btn btn-outline-dark mt-auto" onClick={add}>Agregar al Carrito</button>
         </div>
     </div>
   )

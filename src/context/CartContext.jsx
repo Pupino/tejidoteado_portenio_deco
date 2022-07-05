@@ -8,12 +8,13 @@ export const CartProvider = ({children}) => {
     //se pueden tener estados, efectos, funciones, las cuales estaran disponibles para los children suscriptos al contexto
 
     const [cart, setCart] = useState([]);
+    const [orderNumber, setOrderNumber] = useState();
 
     //Agregar item y su cantidad al carrito
     const addItem = (pItem, pCantidad) => {
         if (isInCart(pItem.id)) {
             //sumar cantidad
-            console.log('ya esta en el carrito, sumar cantidad');
+            //console.log('ya esta en el carrito, sumar cantidad');
             //Recorre cada item de cart y lo copia en un nuevo array, para agregar la cantidad cuando encuentre el id
 			const newCart = cart.map((item) => {
 				if (item.id === pItem.id) {
@@ -47,7 +48,7 @@ export const CartProvider = ({children}) => {
 
     //Remover un item del carrito usando su id
      const removeItem = (pItemId) => {
-        console.log('Removes Item');
+        //console.log('Removes Item');
         //hace una copia del carrito
 		const cartCopy = [...cart];
         //filtra de esa copia el item que quiere remover y crea un nuevo array pulido
@@ -59,7 +60,7 @@ export const CartProvider = ({children}) => {
     }
 
     //Remover todos los items del carrito
-    const clear = () => {
+    const clearCart = () => {
         setCart([]);
     }
 
@@ -75,7 +76,7 @@ export const CartProvider = ({children}) => {
     },0 );
 
     return(
-        <CartContext.Provider value={{ cart, addItem, removeItem, clear, isInCart, getTotalItems, getTotalPrice }}>
+        <CartContext.Provider value={{ cart, addItem, removeItem, clearCart, isInCart, getTotalItems, getTotalPrice, orderNumber, setOrderNumber }}>
             {children}
         </CartContext.Provider>
     );

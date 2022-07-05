@@ -31,7 +31,7 @@ function ItemDetail({item}) {
                     {/* <!-- Product image--> */}
                     <img className="card-img-top" src={item.img} alt="..." />
                     {/* <!-- Product details--> */}
-                    <div className="card-body p-4 pb-2 border-bottom">
+                    <div className="card-body p-4 pb-2">
                         <div className="text-center">
                             {/* <!-- Product name--> */}
                             <h5 className="fw-bolder">{item.name}</h5>
@@ -47,7 +47,7 @@ function ItemDetail({item}) {
                       <Link to="/cart" className="btn btn-outline-info active text-light m-4 mt-0">Terminar mi Compra</Link>
                     }
                     {isInCart(item.id) &&
-                      <button className="btn btn-outline-secondary active text-light m-4 mt-0" onClick={removeItemFromItem}>Remover Item</button>
+                      <button className="btn btn-outline-danger active text-light m-4 mt-0" onClick={removeItemFromItem}>Remover Item</button>
                     }
                 </div>
             </div>
