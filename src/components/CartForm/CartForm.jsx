@@ -34,7 +34,7 @@ function CartForm() {
         setIsDisabled(checkPropertiesWithValues(buyerCopy));
         setBuyer({
             ...buyer,
-            [field]: value //entre corchetes el campo es dinámico
+            [field]: value //entre corchetes el campo es dinámico, se accede a la propiedad del objeto
         })
     }
 
