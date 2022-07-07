@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 
 //1. Se exporta el context para los componentes q necesiten usar su info
 export const CartContext = createContext();
