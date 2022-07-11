@@ -5,8 +5,10 @@ import { getFirestore, getDocs, getDoc, doc, collection, query, where, setDoc, a
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+/* node => variables de entorno = env variables */
+/* .env dote env */
 const firebaseConfig = {
-  apiKey: "AIzaSyBLc0nxh1tRHA5sH8gWjXlRywG_JxYglho",
+  apiKey: process.env.REACT_APP_FB_APIKEY,
   authDomain: "tejidoteadoportenio.firebaseapp.com",
   projectId: "tejidoteadoportenio",
   storageBucket: "tejidoteadoportenio.appspot.com",
