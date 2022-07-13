@@ -12,8 +12,8 @@ const firebaseConfig = {
   authDomain: "tejidoteadoportenio.firebaseapp.com",
   projectId: "tejidoteadoportenio",
   storageBucket: "tejidoteadoportenio.appspot.com",
-  messagingSenderId: "870154836348",
-  appId: "1:870154836348:web:4b7a1513c3da2afa1cecf9"
+  messagingSenderId: process.env.REACT_APP_FB_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_FB_APPID
 };
 
 // Initialize Firebase
@@ -39,7 +39,6 @@ export async function getItems() { //definir funcion asincrona para que pueda ha
 }
 
 export async function traerProducto(id){
-  //const itemsCollection = collection(appFirestore,"items");
   const docRef = doc(db, "items", id);
   const docSnapshot = await getDoc(docRef); //el await espera a que la llamada se cumpla
   //console.log("snap: " + docSnapshot.data());

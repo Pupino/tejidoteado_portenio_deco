@@ -1,7 +1,5 @@
 import React from 'react';
-// import ItemCount from '../ItemCount/ItemCount';
 import { NavLink } from 'react-router-dom';
-//import Header from '../Header';
 
 const Item = ({ item }) => {
 

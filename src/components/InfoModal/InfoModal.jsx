@@ -7,8 +7,6 @@ export default function InfoModal(props) {
     const { orderNumber, setOrderNumber } = useContext(CartContext);
 
      const [show, setShow] = useState(props.show);
-     //const handleClose = () => setShow(false);
-     //const handleShow = () => setShow(true);
 
      function handleClose(){
       setOrderNumber(); //blank order number
