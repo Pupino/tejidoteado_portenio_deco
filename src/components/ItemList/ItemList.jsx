@@ -1,15 +1,12 @@
 import React from 'react'
 import Item from '../Item/Item'
+import Spinner from '../Spinner/Spinner'
+
 
 const ItemList = ({items}) => {
 
   if( !items.length)
-    return <div className="text-center">
-            <div className="spinner-border m-5" role="status">
-              <span className="sr-only"></span>
-            </div>
-          </div>
-
+    return <Spinner />
    return (
     <>
       {
