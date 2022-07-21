@@ -18,7 +18,7 @@ function NavBar() {
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <Link to='/category/crochet' className="dropdown-item">Crochet</Link>
                                 <li><hr className="dropdown-divider" /></li>
-                                <Link to='/category/agujas' className="dropdown-item">2 Agujas</Link>
+                                <Link to='/category/agujas' className="dropdown-item">Agujas</Link>
                                 <Link to='/category/bordado' className="dropdown-item">Bordados</Link>
                             </ul>
                         </li>

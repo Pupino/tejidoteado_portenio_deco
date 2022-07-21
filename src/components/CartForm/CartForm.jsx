@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { createBuyOrder } from '../../services/FirebaseConfig';
 import { CartContext } from '../../context/CartContext';
-import { Spinner } from 'react-bootstrap';
+import Spinner from '../Spinner/Spinner';
 
 function CartForm() {
     const { cart , getTotalPrice, clearCart, setOrderNumber} = useContext(CartContext);
@@ -87,14 +87,7 @@ function CartForm() {
             </div>
             <hr/>
         </form> :
-            <>
             <Spinner/>
-            <div className="d-flex align-items-center">
-              <strong>PROCESANDO COMPRA ...</strong>
-                <div className="spinner-border ms-auto" role="status" aria-hidden="true"></div>
-            </div>
-            <hr/>
-            </>
     }
     </>
   )
